@@ -31,38 +31,37 @@
     <main class="flex-grow flex items-center justify-center p-6">
       <div class="w-full max-w-6xl text-center">
         <h1 class="text-2xl font-semibold text-gray-700 mb-4">
-          Інтерактивний модуль інформації про закупівлі ГРК
+          Інтерактивний модуль інформації про закупівлі Виконавчого комітету
+          Вишнівської селищної ради
         </h1>
         <p class="text-gray-600 mb-6">
           Нижче інтегровано віджет з офіційного майданчика Prozorro.Pro
         </p>
 
         <!-- Віджет Zakupki -->
-        <div id="prom_state_purchase"></div>
-      </div>
-    </main>
+  <div id="prom_state_purchase"></div>
 
-    <!-- СКРИПТ ВІДЖЕТА -->
-    <script type="text/javascript">
-      var _zk_uaprom = _zk_uaprom || [];
-      _zk_uaprom.push(
-        ["APP_ID", "65f33697-83e7-454b-a3d4-5bd6794d3619"],
-        ["CONTAINER_ID", "prom_state_purchase"],
-        ["LOCALE", "uk"],
-        ["ENTITYTYPE", 0],
-        ["SRN", ["41059569"]]
-      );
-      (function (d, tag, id) {
-        if (d.getElementById(id)) return;
-        var pjs = d.createElement(tag);
-        pjs.id = id;
-        pjs.type = "text/javascript";
-        pjs.src =
-          "//zk-cabinet.s3.zakupivli.pro/js/build/zakupki_widget_init_v2/zakupki_widget_init_v2_wp.fd745.js";
-        pjs.async = true;
-        var sc = d.getElementsByTagName(tag)[0];
-        sc.parentNode.insertBefore(pjs, sc);
-      })(document, "script", "zakupki_uaprom_id");
-    </script>
+  <!-- СКРИПТ ВІДЖЕТА -->
+  <script type="text/javascript">
+    var _zk_uaprom = _zk_uaprom || [];
+    _zk_uaprom.push(
+      ['APP_ID', '65f33697-83e7-454b-a3d4-5bd6794d3619'],
+      ['CONTAINER_ID', 'prom_state_purchase'],
+      ['LOCALE', 'uk'],
+      ['ENTITYTYPE', 0],
+      ['SRN', ['45782421', '44029186', '44070234', '41059569']]
+    );
+    (function (d, tag, id) {
+      if (d.getElementById(id)) return;
+      var pjs = d.createElement(tag);
+      pjs.id = id;
+      pjs.type = 'text/javascript';
+      pjs.src = '//zk-cabinet.s3.zakupivli.pro/js/build/zakupki_widget_init_v2/zakupki_widget_init_v2_wp.fd745.js';
+      pjs.async = true;
+      var sc = d.getElementsByTagName(tag)[0];
+      sc.parentNode.insertBefore(pjs, sc);
+    })(document, 'script', 'zakupki_uaprom_id');
+  </script>
+
   </body>
 </html>

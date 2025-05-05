@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Сторінка закупівель Вишнівської СТГ" />
     <title>Закупівлі - Вишнівська СТГ</title>
-
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.svg" type="image/png" />
 
@@ -18,47 +17,47 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css" />
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- jQuery та iframe resizer для e-tender -->
-    <script src="https://gov.e-tender.ua/Scripts/jquery-1.11.3.min.js"></script>
-    <script src="https://gov.e-tender.ua/Scripts/iframeResizer.min.js"></script>
+    <script src="js/app.js"></script>
   </head>
 
-  <body class="bg-gray-50 text-gray-800 font-sans">
+  <body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
     <!-- Test Mode Banner -->
     <div class="bg-yellow-400 text-center py-2 text-gray-800 font-semibold">
       МОДУЛЬ НА СТАДІЇ РОЗРОБКИ
     </div>
 
-    <main
-      class="flex flex-col items-center justify-center min-h-screen px-4 py-10"
-    >
-      <section class="w-full max-w-7xl text-center mb-6">
-        <h1 class="text-2xl font-semibold text-gray-700 mb-2">
-          Інтерактивний модуль інформації про закупівлі ГРК
+    <main class="flex-grow flex items-center justify-center p-6">
+      <div class="w-full max-w-6xl text-center">
+        <h1 class="text-2xl font-semibold text-gray-700 mb-4">
+          Інтерактивний модуль інформації про закупівлі головних розпорядників коштів
         </h1>
-        <p class="text-gray-600 mb-6">
-          Віджет надано платформою <strong>e-tender</strong>
-        </p>
-      </section>
 
-      <!-- IFRAME e-tender -->
-      <div class="w-full overflow-hidden">
-        <iframe
-          src="https://gov.e-tender.ua?theme=styleLightShare&edrpou=41059569,44070234,44029186,45782421"
-          width="1124"
-          scrolling="no"
-          frameborder="0"
-          class="mx-auto w-full"
-        ></iframe>
-      </div>
-    </main>
+  <!-- Віджет Zakupki -->
+  <div id="prom_state_purchase"></div>
 
-    <!-- Ініціалізація resizer'а -->
-    <script>
-      $("iframe").iFrameResize({ log: false });
-    </script>
+  <!-- Скрипт віджета -->
+  <script type="text/javascript">
+    var _zk_uaprom = _zk_uaprom || [];
+    _zk_uaprom.push(
+      ['APP_ID', '65f33697-83e7-454b-a3d4-5bd6794d3619'],
+      ['CONTAINER_ID', 'prom_state_purchase'],
+      ['LOCALE', 'uk'],
+      ['ENTITYTYPE', 0],
+      ['SRN', ['45782421', '44029186', '44070234', '41059569']]
+    );
+    (function (d, tag, id) {
+      if (d.getElementById(id)) return;
+      var pjs = d.createElement(tag);
+      pjs.id = id;
+      pjs.type = 'text/javascript';
+      pjs.src = '//zk-cabinet.s3.zakupivli.pro/js/build/zakupki_widget_init_v2/zakupki_widget_init_v2_wp.fd745.js';
+      pjs.async = true;
+      var sc = d.getElementsByTagName(tag)[0];
+      sc.parentNode.insertBefore(pjs, sc);
+    })(document, 'script', 'zakupki_uaprom_id');
+  </script>
+
   </body>
 </html>
